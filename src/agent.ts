@@ -142,6 +142,7 @@ export default class HttpsProxyAgent extends Agent {
 				return tls.connect({
 					...omit(opts, 'host', 'hostname', 'path', 'port'),
 					socket,
+                    ca: proxy.ca,
 					servername
 				});
 			}
